@@ -1,3 +1,18 @@
+This is the pjaxified version of the '_s' created by Automattic. pjax is a jQuery plugin that uses ajax and pushState to deliver a fast browsing experience with real permalinks, page titles, and a working back button.
+
+What is changed? 
+
+	*All instances of get_header() and get_footer() in your front end theme files have been replaced with  pjax_header() and pjax_footer() - these are functions found in your functions.php file that tell WordPress not to load the document headers if you are getting that page via a pjax request. This is beneficial because it allows you to continue to use your permalinks as per normal and creates a smooth fall back for browsers who do not support it. 
+	* included pjax library. The pjax library and initiation of your pjax code can be found in jquery.pjax.js 
+	* added some HTML markup to theme files for "loading" message 
+	
+How does it work? 
+We use pjax ( https://github.com/defunkt/jquery-pjax ) to take over all page links that bring you to another page within your website and tell the browser to use a pjax request. If the browser does not detect a pjax request (because the browser does not support it or it was a direct link) then it will display the normal WordPress themed page as per usual. 
+
+How can I customize it? 
+All of the pjax options are extended options using the 
+
+
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
 _s
